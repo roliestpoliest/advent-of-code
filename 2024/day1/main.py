@@ -41,15 +41,15 @@ def part_two(input: str) -> int:
   # Step 1: Count occurrences of each element in the second column
   second_column_count = {}
   for pair in matrix:
-      right = pair[1]
-      second_column_count[right] = second_column_count.get(right, 0) + 1
+    right = pair[1]
+    second_column_count[right] = second_column_count.get(right, 0) + 1
 
   # Step 2: Compute total similarity
   total_similarity = 0
   for pair in matrix:
-      left = pair[0]
-      similarity = second_column_count.get(left, 0)  # Get count of `left` in second column
-      total_similarity += (left * similarity)
+    left = pair[0]
+    similarity = second_column_count.get(left, 0)  # Get count of `left` in second column
+    total_similarity += (left * similarity)
 
   return total_similarity
 
